@@ -45,7 +45,7 @@ public class TelephoneManipulateApp {
 
 	private void scrambleTelephone(String telephone, String prefix){
 		int length = telephone.length();  //Stores the length of the String telephone inside length variable of integer data-type
-		if(prefix.length() == numOfLetters){        //We check if length of String prefix is equal to numOfLetters
+		if(prefix.length() == numOfLetters){        // check if length of String prefix is equal to numOfLetters
 			if(!listOfTelephones.contains(prefix))  //if listOfTelephones does not contains the prefix, it is added to the Set listOfTelephones and totalManipulations is incremented by 1.
 			{ 
 				listOfTelephones.add(prefix);
@@ -54,7 +54,7 @@ public class TelephoneManipulateApp {
 		}
 		
 		
-		for(int i=0; i < length;i++){                //We are using recursion algorithm where the parameter telephone has all characters except i-th character and the prefix string is being concatenated with character at position i of telephone
+		for(int i=0; i < length;i++){                // using recursion algorithm where the parameter telephone has all characters except i-th character and the prefix string is being concatenated with character at position i of telephone
 			scrambleTelephone(telephone.substring(0,i) + telephone.substring(i+1,length), prefix + telephone.charAt(i));
 		}
 	}
